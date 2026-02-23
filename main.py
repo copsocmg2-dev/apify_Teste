@@ -281,8 +281,7 @@ def coletar_shopee_queue_log(driver):
     logging.info("--- [SPX] Queue Log (3M) ---")
     tz = pytz.timezone(TIMEZONE)
     now = datetime.now(tz)
-    st_date = (now.replace(day=1) - timedelta(days=61)).replace(day=1)
-    curr, rows = st_date, []
+    st_date = now - timedelta(days=2)    curr, rows = st_date, []
     while curr < now:
         bend = min(curr + timedelta(days=3), now)
         page = 1
